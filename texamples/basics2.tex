@@ -1,0 +1,35 @@
+\documentclass[
+  crop,tikz,convert={
+    outext=.svg,command=\unexpanded{
+      pdf2svg \infile\space\outfile
+    }
+  },
+  multi=false]
+{standalone}[2012/04/13]
+
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+
+\makeatletter
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  \draw [dotted] (0,0) rectangle (10,10);
+  \draw [dotted, ultra thick] (10,0) -- (0,4);
+  \draw (0,0) .. controls (0,10) and (10,0) .. (10,10);
+  \draw [olive, line width=5] (5,0) parabola (0,10);
+  \draw (10,0) arc (0:180:2cm);
+  \draw (3,3) circle (2cm and 3cm);
+  % grid
+  \draw[step=1cm,gray,very thin] (0,0) grid (10,10);
+  % fill
+  \fill[blue!40!white] (0,0) rectangle (1,1);
+  \filldraw[left color=green, right color=white, draw=black] (5,5) rectangle (4,4);
+  % text
+  \node at (5,5) {yolo};
+
+
+\end{tikzpicture}
+
+\end{document}
