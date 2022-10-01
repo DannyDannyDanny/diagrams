@@ -5,4 +5,4 @@ clean:
 	rm *.svg
 
 svg:
-	pdflatex -shell-escape diagram.tex && explorer.exe diagram.svg
+	pdflatex -shell-escape diagram.tex && explorer.exe diagram.html
