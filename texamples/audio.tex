@@ -1,0 +1,75 @@
+\documentclass[
+  crop,tikz,convert={
+    outext=.svg,
+    command=\unexpanded{
+      pdf2svg \infile\space\outfile
+    }
+  },
+  multi=false]
+{standalone}[2012/04/13]
+
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usetikzlibrary{positioning}
+
+\makeatletter
+
+\begin{document}
+
+  % \begin{tikzpicture}
+  \begin{tikzpicture}[
+      rounded corners=2pt,
+      inner sep=5pt,
+      line width=.6pt,
+      node distance=.8cm]
+
+    % background grid & fill
+    \fill[black!40!white] (0,0) rectangle (14,8);
+    \draw[step=1cm,gray,very thin] (0,0) grid (14,8);
+
+    % sources y=7
+    \node (jack) at (2,7) [draw] {male mini-jack};
+    \node (soundcard) at (8,7) [draw] {DJ Soundcard};
+    \node (microphone) at (5,7) [draw] {microphone};
+
+    % mixer y=5
+    \node (mixer) at (3.5,5) [draw] {mixer};
+    \node (headphones) at (6,5) [draw] {headphones};
+
+    % amps y=3
+    \node (subamp) at (2,3) [draw] {sub amp};
+    \node (topamp) at (5,3) [draw] {top amp};
+
+    % speakers y=1
+    \node [draw] (topl) at (1,1) {top\\left};
+    \node [draw] (sub) at (3,1) {sub};
+    \node [draw] (topr) at (5,1) {top\\right};
+
+    % wiring (sources - mixer)
+    \draw (microphone.south) -- (mixer.north);
+    \draw (soundcard.south) -- (headphones.north);
+    \draw (soundcard.south) -- (mixer.north) node[midway,above] {$C_1$};
+    \draw (jack.south) -- (mixer.north) node[midway,above] {$C_2$};
+
+    % wiring (amps - speakers)
+    \draw (mixer.south) -- (topamp.north) node[midway,above] {$C_3$};
+    \draw (mixer.south) -- (subamp.north) node[midway,above] {$C_4$};
+
+    % wiring (amps - speakers)
+    \draw (subamp.south) -- (sub.north) node[midway,above] {$C_5$};
+    \draw (topamp.south) -- (topl.north) node[midway,above] {$C_6$};
+    \draw (topamp.south) -- (topr.north) node[midway,above] {$C_7$};
+
+    % cable legend
+    \node (legend) at (11,4) [draw, text width=5cm] {
+      \textbf{Cables}\\
+      $C_1$ - mini-jack (F) - 2xRCA (F)\\
+      $C_2$ - 2xRCA - 2xRCA\\
+      $C_3$ - jack - jack\\
+      $C_4$ - jack - jack\\
+      $C_5$ - Unknown\\
+      $C_6$ - Unknown\\
+      $C_7$ - Unknown\\
+    };
+
+  \end{tikzpicture}
+\end{document}
