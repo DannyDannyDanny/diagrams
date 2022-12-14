@@ -25,3 +25,4 @@ Tikz diagrams
 * other resources:
   * [tikz.dev](https://tikz.dev/tutorials-guidelines)
   * [tikz.netlify.app](https://tikz.netlify.app/)
+  * [relative `positioning` library](https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/#relative-positioning)
