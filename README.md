@@ -1,6 +1,14 @@
 # diagrams
 Tikz diagrams
 
+[GitHub Pages link](https://dannydannydanny.github.io/diagrams/)
+
+* [ ] make github pages link
+* [ ] rename `texamples` to `tex`
+* [ ] add `svg` dir for svg files
+* [ ] write script to check that files in `tex` and `svg` correspond
+* [ ] add github actions to run script on push
+
 ## pdflatex
 
 * install dependencies (apt installable)
