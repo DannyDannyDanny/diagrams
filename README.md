@@ -1,7 +1,9 @@
 # diagrams
 Tikz diagrams
 
-[GitHub Pages link](https://dannydannydanny.github.io/diagrams/)
+* [lorem-ipsum](lorem-ipsum.md)
+
+* [GitHub Pages link](https://dannydannydanny.github.io/diagrams/)
 
 * [ ] make github pages link
 * [ ] rename `texamples` to `tex`
