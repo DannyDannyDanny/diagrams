@@ -13,7 +13,8 @@ Tikz diagrams
 
 ## pdflatex
 
-* install dependencies (apt installable)
+* install dependencies:
+  * `sudo apt-get install texlive-latex-extra`
   * `texlive`
   * `texlive-latex-extra`
   * `pdf2svg`
