@@ -6,4 +6,5 @@ clean:
 
 svg:
 	pdflatex -shell-escape diagram.tex
-	explorer.exe diagram.html
+	firefox diagram.html
+	# explorer.exe diagram.html
